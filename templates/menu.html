@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDentify</title>
+    <script src="https://kit.fontawesome.com/de4851ac23.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+    <div id="main" style="transition: all 0.5s linear;">
+        <div class="glow_effect"></div>
+        <header>
+            <h1><span>ID</span><i>entify</i></h1>
+            
+            <div class="burger-alternative">
+                <i class="fa-solid fa-house fa-2xl" style="color: #ffffff; margin-right: 5px;"></i>
+                <i class="fa-solid fa-shop fa-2xl" style="color: #ffffff; margin-right: 5px;"></i>
+                <i class="fa-solid fa-right-to-bracket  fa-2xl" style="color: #ffffff; margin-right: 5px;"></i>
+                <i class="fa-solid fa-circle-info  fa-2xl" style="color: #ffffff; margin-right: 5px;"></i>
+                <i class="fa-solid fa-gear  fa-2xl" style="color: #ffffff; margin-right: 5px;"></i>
+            </div>
+
+            <i id="hamburger-button" class="fa-solid fa-bars fa-2xl" style="color: #ffffff; color: #ffffff; float: right; margin-top: 40px; margin-right: 20px;"></i>
+        </header>
+
+        <div class="idDiv scale-in-ver-top" onclick="window.location.href='/id'">
+            <h3>ID-kort</h3>
+            <div class="avatarImg">
+                <img src="{{ img }}" alt="">
+                <div class="dottedRotate rotate-90-cw">
+
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename='/images/my_id_background_shapes.webp') }}" alt="">
+        </div>
+        <div class="parent">
+            <div class="div1" style="text-align: center;">
+                <i class="fa-solid fa-passport fa-5x" style="color: #e3e3e3; display: block; margin-left: auto; margin-right: auto; position: relative; top: 25px;     background: -webkit-linear-gradient(#eee, #656565);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"></i>
+                <h3 style="margin: 35px 0px 0px 0px;">Dela ditt ID</h3>
+            </div>
+            <div class="div2" style="text-align: center;">
+                <i class="fa-solid fa-circle-info fa-5x" style="color: #e3e3e3; display: block; margin-left: auto; margin-right: auto; position: relative; top: 25px;     background: -webkit-linear-gradient(#eee, #656565);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"></i>
+                <h3 style="margin: 35px 0px 0px 0px;">Information</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-background" style="visibility:hidden;">
+        <div id="menu">
+            <ul>
+                <li onclick="window.location.href = '/'"><i class="fa-solid fa-house" style="color: #ffffff; margin-right: 5px;"></i> Hem</li>
+                <li onclick="window.location.href = '/butiker'"><i class="fa-solid fa-shop" style="color: #ffffff; margin-right: 5px;"></i> Butiker</li>
+                <li><i class="fa-solid fa-right-to-bracket" style="color: #ffffff; margin-right: 5px;"></i> Byt konto</li>
+                <li style="letter-spacing: -3px; opacity: 0.2;">-----------------</li>
+                <li><i class="fa-solid fa-circle-info" style="color: #ffffff; margin-right: 5px;"></i> Om projektet</li>
+                <li onclick="window.location.href = '/settings'"><i class="fa-solid fa-gear" style="color: #ffffff; margin-right: 5px;"></i> Inställningar</li>
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

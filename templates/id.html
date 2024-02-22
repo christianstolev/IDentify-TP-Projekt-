@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDentify</title>
+    <script src="https://kit.fontawesome.com/de4851ac23.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="{{ url_for('static', filename='particles.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='id.css') }}">
+</head>
+
+<body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div> <!-- stats - count particles -->
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <div id="main" style="transition: all 0.5s linear;">
+        <div class="glow_effect"></div>
+        <div class="idDiv scale-in-ver-top">
+            <h3>ID-kort</h3>
+            <div class="avatarImg">
+                <img src="{{ img }}" alt="">
+                <div class="dottedRotate rotate-90-cw">
+
+                </div>
+            </div>
+            <h2 style="display: block;
+            margin-top: 70px; font-size: 30px; background: #ffffff5f;
+background: linear-gradient(to right, #576dcfa2 -50%, #fff 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+            color: white; text-align: center; font-family: Poppins, sans-serif;">IDentify</h2>
+            <h2 style="display: block;
+            margin-top: 90px;
+            color: white; text-align: center; font-family: Poppins, sans-serif;">{{ Name }}</h2>
+            <h2
+                style="display: block; margin-top: -23px; font-weight: 500; 
+            color: white; text-align: center; font-family: Poppins, sans-serif; font-size: 22px; text-decoration: none !important;">
+                {{ SSN }}</h2>
+        </div>
+
+
+        <div class="qrDiv">
+            <h3>QR-kod</h3>
+            <div style="display: flex;
+            justify-content: center;
+            height: calc(100vh - 615px);
+            align-items: center;     position: relative;
+    top: -30px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=1350x1350&data={{ SSN }}&bgcolor=10-10-10&color=FFF"
+                    alt="" style="display: block; height: 70%;">
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-background" style="visibility:hidden;">
+        <div id="menu">
+            <ul>
+                <li onclick="window.location.href = '/'"><i class="fa-solid fa-house"
+                        style="color: #ffffff; margin-right: 5px;"></i> Hem</li>
+                <li onclick="window.location.href = '/butiker'"><i class="fa-solid fa-shop"
+                        style="color: #ffffff; margin-right: 5px;"></i> Butiker</li>
+                <li><i class="fa-solid fa-right-to-bracket" style="color: #ffffff; margin-right: 5px;"></i> Byt konto
+                </li>
+                <li style="letter-spacing: -3px; opacity: 0.2;">-----------------</li>
+                <li><i class="fa-solid fa-circle-info" style="color: #ffffff; margin-right: 5px;"></i> Om projektet</li>
+                <li onclick="window.location.href = '/settings'"><i class="fa-solid fa-gear"
+                        style="color: #ffffff; margin-right: 5px;"></i> Inställningar</li>
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='id.js') }}"></script>
+</body>
+
+</html>
